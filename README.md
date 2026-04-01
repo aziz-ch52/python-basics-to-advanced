@@ -7,7 +7,8 @@ A comprehensive, structured, and beginner-friendly repository designed to take y
 Python was developed by **Guido van Rossum**, a Dutch programmer, at CWI (Netherlands).
 
 - 🗓️ **Started Development:** 1989  
-- 🚀 **First Release:** 1991  
+- 🚀 **First Release:** 1991
+- 🔄 **Current Version:** Python 3.13
 
 Python was designed with a focus on simplicity, readability, and ease of use, making it one of the most popular programming languages today.
 
