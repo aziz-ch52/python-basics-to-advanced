@@ -59,9 +59,13 @@ Each folder contains:
 ## 💡 Why This Repository?
 
 ✔ Beginner-friendly explanations
+</br>
 ✔ Clean and structured code
+</br>
 ✔ Output included for every concept
+</br>
 ✔ Focus on **logic building**
+</br>
 ✔ Continuously growing resource
 
 This is not just a code dump — it’s a **learning system**.
