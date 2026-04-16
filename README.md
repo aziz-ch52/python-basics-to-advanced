@@ -156,5 +156,7 @@ This repository is designed with one goal:
 Stay consistent, practice regularly, and focus on understanding — not memorizing.
 
 ---
+<div align="center">
+  🔥 <em>Keep coding. Keep improving.</em>
+</div>
 
-🔥 *Keep coding. Keep improving.*
