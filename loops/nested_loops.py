@@ -18,7 +18,7 @@ WHEN TO USE?
 ✔ Comparing combinations
 
 REAL THINKING:
-"For each row → run another loop"
+"For each row → run another loop."
 """
 
 
@@ -92,7 +92,7 @@ for i in numbers:
 # 6. BREAK IN NESTED LOOP (IMPORTANT)
 # ========================================
 
-# Break only exits INNER loop
+# Break only exits the INNER loop
 
 for i in range(3):
     for j in range(3):
