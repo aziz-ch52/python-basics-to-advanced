@@ -14,12 +14,12 @@ while condition:
 
 WHEN TO USE?
 
-✔ When number of iterations is NOT fixed
-✔ When loop depends on condition (user input, state)
-✔ When you don’t know how many times loop should run
+✔ When the number of iterations is NOT fixed
+✔ When the loop depends on a condition (user input, state)
+✔ When you don’t know how many times the loop should run
 
 REAL THINKING:
-"Keep doing this UNTIL condition becomes False"
+"Keep doing this UNTIL condition becomes False."
 """
 
 
@@ -80,7 +80,7 @@ while num != 0:
 # ========================================
 
 """
-An infinite loop runs forever if condition never becomes False.
+An infinite loop runs forever if the condition never becomes False.
 """
 
 # ❌ Example (DON'T RUN)
@@ -108,7 +108,7 @@ while True:
 correct_password = "1234"
 entered_password = ""
 
-# Keep asking until correct password
+# Keep asking until the correct password
 while entered_password != correct_password:
     entered_password = input("Enter password: ")
 
@@ -137,7 +137,7 @@ print("Access Granted")
 # ========================================
 
 """
-✔ Always update loop variable
+✔ Always update the loop variable
 ✔ Avoid unnecessary infinite loops
 ✔ Use break for control
 ✔ Keep conditions clear
