@@ -5,7 +5,7 @@ LOOPS PRACTICE - TEST YOUR SKILLS
 
 RULES:
 ✔ Do NOT look at solutions immediately
-✔ Try yourself first
+✔ Try it yourself first
 ✔ Break problem into steps
 ✔ Use print() to debug
 
@@ -201,7 +201,7 @@ for i in range(1, n + 1):
 # ========================================
 
 """
-Find largest number in list WITHOUT using max()
+Find the largest number in the list WITHOUT using max()
 """
 
 numbers = [10, 45, 23, 89, 67]
