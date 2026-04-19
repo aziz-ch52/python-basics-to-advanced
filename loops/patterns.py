@@ -16,7 +16,7 @@ WHY IMPORTANT?
 
 CORE IDEA:
 Outer loop → rows
-Inner loop → columns / elements per row
+Inner loop → columns/elements per row
 """
 
 
@@ -193,9 +193,9 @@ for i in range(n - 1, 0, -1):
 
 """
 ❌ Not understanding rows vs columns
-❌ Forgetting end=" " (everything prints in new line)
+❌ Forgetting end=" " (everything prints in a new line)
 ❌ Wrong loop ranges
-❌ Not visualizing pattern before coding
+❌ Not visualizing the pattern before coding
 """
 
 
