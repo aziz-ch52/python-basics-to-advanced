@@ -16,7 +16,7 @@ Purpose:
 
 """
 Logic:
-✔ Keep asking until correct password
+✔ Keep asking until the correct password
 ✔ Limit attempts
 """
 
@@ -44,7 +44,7 @@ if attempts == 0:
 """
 Logic:
 ✔ Show menu repeatedly
-✔ Stop when user chooses exit
+✔ Stop when the user chooses exit
 """
 
 while True:
@@ -164,7 +164,7 @@ print("Factorial:", factorial)
 
 """
 Logic:
-✔ Extract digits and rebuild number
+✔ Extract digits and rebuild the number
 """
 
 num = int(input("Enter number: "))
