@@ -113,9 +113,9 @@ print(r)   # [0, 1, 2, 3, 4]
 # ========================================
 
 """
-✔ Always remember stop is excluded
+✔ Always remember that stop is excluded
 ✔ Use meaningful ranges
-✔ Use negative step for reverse loops
+✔ Use a negative step for reverse loops
 ✔ Prefer direct iteration when possible
 """
 
