@@ -19,7 +19,7 @@ Types:
 """
 WHAT IS BREAK?
 
-Stops the loop immediately when condition is met.
+Stops the loop immediately when the condition is met.
 """
 
 for i in range(10):
@@ -88,7 +88,7 @@ for i in range(1, 11):
 WHAT IS PASS?
 
 Does nothing.
-Used as placeholder for future code.
+Used as a placeholder for future code.
 """
 
 for i in range(3):
@@ -134,7 +134,7 @@ for num in numbers:
 """
 ✔ Use break to exit early when needed
 ✔ Use continue to skip unwanted cases
-✔ Use pass only as placeholder
+✔ Use pass only as a placeholder
 ✔ Keep loop logic clear and readable
 """
 
@@ -145,7 +145,7 @@ for num in numbers:
 
 # Print numbers from 1–10
 # Skip multiples of 3
-# Stop if number is 8
+# Stop if the number is 8
 
 for i in range(1, 11):
     if i % 3 == 0:
