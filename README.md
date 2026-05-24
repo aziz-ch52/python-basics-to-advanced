@@ -45,6 +45,11 @@ python-basics-to-advanced/
 ├── functions/
 ├── oops/
 ├── advanced/
+├── libraries|
+|            ├── numpy/
+|            ├── pandas/
+|            ├── matplotib/
+|            ├── etc/ 
 └── practice-problems/
 ```
 
