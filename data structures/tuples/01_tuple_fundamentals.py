@@ -1,105 +1,57 @@
 """
 =========================================================
-01. TUPLE FUNDAMENTALS (IMMUTABLE DATA)
+01. TUPLE BASICS (IMMUTABLE RECORDS)
 =========================================================
 A tuple is an ordered, IMMUTABLE collection of items. 
 
-Once a tuple is created, you cannot add, remove, or change 
-its elements. In data pipelines, tuples are used to represent 
-fixed records (like a row from a SQL database) or to return 
-multiple calculated metrics from a function safely.
+In data pipelines, immutability is a feature, not a bug. 
+You use tuples to lock down data (like a raw SQL record) 
+so it cannot be accidentally altered by downstream code.
 =========================================================
 """
 
 # ---------------------------------------------------------
-# 1. CREATION AND IMMUTABILITY
+# 1. CREATION & INDEXING
 # ---------------------------------------------------------
-print("--- 1. CREATION & IMMUTABILITY ---")
+print("--- 1. CREATION & ACCESS ---")
 
-# Tuples use parentheses () instead of square brackets []
-db_record = (1001, "John Doe", "Active", 450.75)
+# Tuples use parentheses (). They are zero-indexed like lists.
+raw_transaction = ("TXN-9982", "2026-06-12", 450.75, "SUCCESS")
 
-print(f"User Record: {db_record}")
-print(f"Accessing data via index: {db_record[1]}") 
-
-# ❌ THE ERROR THAT MAKES TUPLES VALUABLE:
-# If you uncomment the line below, the script will crash.
-# db_record[2] = "Inactive"  # TypeError: 'tuple' object does not support item assignment
-
-print("State: Locked and secure. Cannot be mutated.\n")
+print(f"Transaction ID: {raw_transaction[0]}")
+print(f"Amount: ${raw_transaction[2]}")
 
 
 # ---------------------------------------------------------
-# 2. THE SINGLE ITEM TUPLE TRAP (COMMON MISTAKE)
+# 2. THE IMMUTABILITY RULE
 # ---------------------------------------------------------
-print("--- 2. THE SINGLE ITEM TRAP ---")
+print("\n--- 2. THE IMMUTABILITY SHIELD ---")
 
-# If you need a tuple with only one item, you MUST include a trailing comma.
-# Without the comma, Python just thinks you put a math expression inside parentheses.
+# ❌ The code below would crash the script with a TypeError.
+# raw_transaction[3] = "FAILED" 
 
-fake_tuple = ("admin") 
-real_tuple = ("admin",) 
-
-print(f"Type without comma: {type(fake_tuple)}") # Outputs: <class 'str'>
-print(f"Type with comma: {type(real_tuple)}\n")  # Outputs: <class 'tuple'>
+print("Data locked. Tuple does not support item assignment.")
 
 
 # ---------------------------------------------------------
-# 3. TUPLE UNPACKING (CRITICAL FOR DATA ANALYTICS)
+# 3. THE SINGLE-ITEM COMMA TRAP
 # ---------------------------------------------------------
-print("--- 3. TUPLE UNPACKING ---")
-# This is how you extract variables quickly. You will use this constantly 
-# when iterating over DataFrames (e.g., using iterrows()).
+print("\n--- 3. THE SINGLE-ITEM TRAP ---")
+# To create a tuple with one item, you MUST include a trailing comma.
 
-server_config = ("192.168.1.1", 8080, "Production")
+math_expression = (500)      # Python reads this as an integer
+valid_single_tuple = (500,)  # The comma makes it a tuple
 
-# Unpacking assigns each item in the tuple to a distinct variable in one line
-ip_address, port, environment = server_config
-
-print(f"Connecting to {environment} at {ip_address}:{port}")
-
-# Using the asterisk (*) to gather remaining items
-financial_quarters = ("Q1", 15000, 18000, 22000, 25000)
-quarter_name, *revenue_data = financial_quarters
-
-print(f"Revenue array for {quarter_name}: {revenue_data}\n")
+print(f"Without comma: {type(math_expression)}")
+print(f"With comma: {type(valid_single_tuple)}")
 
 
 # ---------------------------------------------------------
-# 4. BUILT-IN METHODS (ONLY TWO EXIST)
+# 4. BUILT-IN METHODS (ONLY TWO)
 # ---------------------------------------------------------
-print("--- 4. METHODS ---")
-# Because they are immutable, there is no append, remove, pop, or sort.
+print("\n--- 4. AVAILABLE METHODS ---")
 
-login_attempts = (200, 403, 404, 200, 500, 200)
+binary_flags = (0, 1, 1, 0, 0, 1, 0)
 
-# count(x): Returns how many times an item appears
-success_count = login_attempts.count(200)
-print(f"Successful logins (200 OK): {success_count}")
-
-# index(x): Returns the first zero-based index of the item
-first_failure = login_attempts.index(403)
-print(f"First forbidden error (403) occurred at index: {first_failure}\n")
-
-
-# ---------------------------------------------------------
-# 5. APPLIED SCENARIO: FUNCTION RETURNS
-# ---------------------------------------------------------
-print("--- 5. APPLIED SCENARIO: AGGREGATION ---")
-# When you write a function to analyze data, you often need to return 
-# more than one number. Python implicitly uses tuples to do this.
-
-def analyze_traffic(traffic_list):
-    total = sum(traffic_list)
-    average = total / len(traffic_list)
-    peak = max(traffic_list)
-    
-    # Returning multiple values creates a tuple automatically
-    return total, average, peak
-
-daily_visitors = [120, 150, 200, 110, 300]
-
-# Call the function and unpack the resulting tuple immediately
-total_visits, avg_visits, peak_visits = analyze_traffic(daily_visitors)
-
-print(f"Total: {total_visits}, Average: {avg_visits}, Peak: {peak_visits}")
+print(f"Count of 1s (True): {binary_flags.count(1)}")
+print(f"First occurrence of 1 is at index: {binary_flags.index(1)}")
