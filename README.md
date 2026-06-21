@@ -103,16 +103,17 @@ Python is one of the most versatile and widely used programming languages due to
 
 ---
 
-## 📈 Applications in Different Fields
 
-| Field              | Usage                        |
-| ------------------ | ---------------------------- |
-| 💻 Software Dev    | Backend systems, APIs        |
-| 📊 Data Science    | Data analysis, visualization |
-| 🤖 AI/ML           | Model building, automation   |
-| 🌐 Web Development | Server-side logic            |
-| 🔐 Cybersecurity   | Scripting & tools            |
-| 📱 Automation      | Task automation, bots        |
+## 📈 Applications & The Python Ecosystem
+
+| Field | Usage | Key Libraries & Frameworks |
+| :--- | :--- | :--- |
+| 💻 Software Dev | Backend systems, high-speed APIs | FastAPI, Flask, Django |
+| 📊 Data Science | Data cleaning, analysis, visualization | Pandas, NumPy, Matplotlib, Seaborn |
+| 🤖 AI/ML | Predictive modeling, neural networks | Scikit-Learn, TensorFlow, PyTorch |
+| 🌐 Web Development | Server-side logic, data dashboards | Django, Flask, Streamlit |
+| 🔐 Cybersecurity | Network scanning, cryptography, scripting | Scapy, Cryptography, Requests |
+| 📱 Automation | Web scraping, repetitive task automation | Selenium, BeautifulSoup, PyAutoGUI |
 
 ---
 
