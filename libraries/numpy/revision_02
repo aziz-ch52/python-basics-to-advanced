@@ -1,0 +1,76 @@
+# ---------------------------------------------------------
+# 10. Iteration & Traversal
+# ---------------------------------------------------------
+# Native Python loop (iterates axis 0)
+for row in grid_2d: 
+    pass 
+
+# np.nditer (optimized flat traversal)
+for element in np.nditer(grid_2d, order='C'):
+    pass
+
+# ---------------------------------------------------------
+# 11. Shape Manipulation & Transformations
+# ---------------------------------------------------------
+reshaped_arr = np.arange(12).reshape(3, 4)       # reshape()
+flattened_copy = grid_2d.flatten()               # Returns contiguous copy
+raveled_view = grid_2d.ravel()                   # Returns uncopied 1D view
+transposed_arr = grid_2d.T                       # Transposition
+expanded_arr = np.expand_dims(vector_1d, axis=0) # Dimensional Modification
+
+# ---------------------------------------------------------
+# 12. Splitting & Concatenation
+# ---------------------------------------------------------
+a, b = np.array([[1]]), np.array([[2]])
+concat_ax0 = np.concatenate((a, b), axis=0)      # Joining along existing axis
+stacked_arr = np.stack((a, b), axis=2)           # Stack along new axis
+v_stacked = np.vstack((a, b))
+h_stacked = np.hstack((a, b))
+
+split_arrays = np.split(np.arange(10), 2)        # Partitioning into 2 arrays
+
+# ---------------------------------------------------------
+# 13. Searching & Locating Elements
+# ---------------------------------------------------------
+indices = np.where(vector_1d > 10)               # where (condition)
+binary_mask = np.where(vector_1d > 10, 1, 0)     # where (ternary)
+coord_indices = np.argwhere(grid_2d > 4)         # argwhere
+insertion_idx = np.searchsorted([1, 2, 4, 5], 3) # searchsorted
+max_idx = np.argmax(vector_1d)                   # argmax
+
+# ---------------------------------------------------------
+# 14. Boolean Masking & Conditional Filtering
+# ---------------------------------------------------------
+mask = (grid_2d > 2) & (grid_2d < 6)             # Bitwise operators (&, |, ~)
+filtered_subset = grid_2d[mask]                  # Applying masks
+
+# ---------------------------------------------------------
+# 15. Fancy Indexing
+# ---------------------------------------------------------
+fancy_result = vector_1d[[0, 2, 3]]              # Extracts specific out-of-order indices
+
+# ---------------------------------------------------------
+# 16. Element-wise Arithmetic
+# ---------------------------------------------------------
+x, y = np.array([1, 2]), np.array([3, 4])
+math_res = x * y + 5                             # Operates element-by-element
+
+# ---------------------------------------------------------
+# 17. Universal Functions (ufuncs)
+# ---------------------------------------------------------
+roots = np.sqrt([4, 9, 16])                      # Compiled C mathematical operations
+logs = np.log([1, 10, 100])
+
+# ---------------------------------------------------------
+# 18. Vectorization Mechanics
+# ---------------------------------------------------------
+def custom_logic(val): return val ** 2 if val > 0 else 0
+vectorized_func = np.vectorize(custom_logic)
+vec_result = vectorized_func(np.array([-1, 0, 5]))
+
+# ---------------------------------------------------------
+# 19. Broadcasting Paradigm
+# ---------------------------------------------------------
+base_matrix = np.ones((3, 3))
+add_vector = np.array([10, 20, 30])
+broadcast_res = base_matrix + add_vector         # Vector broadcasted across all rows
