@@ -1,0 +1,62 @@
+# ---------------------------------------------------------
+# 1. Introduction & Architecture
+# ---------------------------------------------------------
+import numpy as np # Imports & Aliases
+
+# ---------------------------------------------------------
+# 2. Array Creation Primitives
+# ---------------------------------------------------------
+arr_from_list = np.array([10, 20, 30])           # From Collections
+zeros_arr = np.zeros((2, 3), dtype=np.float64)   # Zero Allocations
+ones_arr = np.ones((3, 3), dtype=np.int32)       # One Allocations
+empty_arr = np.empty((2, 2))                     # Uninitialized Allocation
+full_arr = np.full((2, 2), 99)                   # Constant Fills
+seq_arange = np.arange(0, 10, 2)                 # Sequences (arange): [0, 2, 4, 6, 8]
+seq_linspace = np.linspace(0, 1, 5)              # Sequences (linspace): [0., 0.25, 0.5, 0.75, 1.]
+identity_mat = np.eye(3)                         # Identity Matrices
+
+# ---------------------------------------------------------
+# 3. Array Metadata & Properties
+# ---------------------------------------------------------
+print(f"ndim: {zeros_arr.ndim}")                 # Number of axes
+print(f"shape: {zeros_arr.shape}")               # Dimensions tuple
+print(f"size: {zeros_arr.size}")                 # Total elements
+print(f"dtype: {zeros_arr.dtype}")               # Data type
+print(f"itemsize: {zeros_arr.itemsize} bytes")   # Memory per element
+print(f"nbytes: {zeros_arr.nbytes} bytes")       # Total memory consumed
+
+# ---------------------------------------------------------
+# 4. Data Types & Memory Casting
+# ---------------------------------------------------------
+mixed_arr = np.array([1, 2.5, 3])                # Type Inference (upcasts to float)
+int_arr = mixed_arr.astype(np.int32)             # Type Conversion (explicit downcast)
+
+# ---------------------------------------------------------
+# 5. 1D Arrays
+# ---------------------------------------------------------
+vector_1d = np.array([5, 10, 15, 20])
+vector_1d[0] = 99                                # Scalar modification
+
+# ---------------------------------------------------------
+# 6. 2D Arrays & Matrices
+# ---------------------------------------------------------
+grid_2d = np.array([[1, 2, 3], [4, 5, 6]])
+print(f"Element at Row 0, Col 2: {grid_2d[0, 2]}") # Coordinate tuples
+
+# ---------------------------------------------------------
+# 7. Multidimensional Arrays (N-D)
+# ---------------------------------------------------------
+tensor_3d = np.zeros((2, 3, 4))                  # 2 batches, 3 rows, 4 columns
+
+# ---------------------------------------------------------
+# 8. Indexing Systems
+# ---------------------------------------------------------
+print(f"Zero-based Positive: {vector_1d[1]}")
+print(f"Negative Indexing: {vector_1d[-1]}")
+print(f"Coordinate Multi-indexing: {grid_2d[1, 1]}") # Direct access, no temporary arrays
+
+# ---------------------------------------------------------
+# 9. Slicing Mechanics
+# ---------------------------------------------------------
+slice_view = vector_1d[1:4:2]                    # arr[start:stop:step]
+grid_slice = grid_2d[0:2, 1:]                    # Rows 0-1, Columns 1 to end
