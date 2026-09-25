@@ -163,3 +163,21 @@ Broadcasting allows arithmetic operations between arrays of different shapes wit
 
 ## 🎯 Quick Learning Tip
 When working through array operations, check whether an operation produces a **view** or a **copy** by checking `arr.base`. If `arr.base is None`, the array owns its memory; otherwise, it is viewing another array's buffer.
+---
+
+~~~
+NumPy/
+│   │
+│   ├── 01_NumPy_Introduction.py
+│   ├── 02_Array_Creation.py
+│   ├── 03_Array_Attributes.py
+│   ├── 04_Array_Indexing.py
+│   ├── 05_Array_Slicing.py
+│   ├── 06_Array_Reshaping.py
+│   ├── 07_Array_Iteration.py
+│   ├── 08_Array_Joining.py
+│   ├── 09_Array_Splitting.py
+│   ├── 10_Array_Operations.py
+│   ├── 11_Array_Sorting.py
+│   ├── 12_Array_Searching.py
+│   └── 13_Boolean_Indexing_Filtering.py
