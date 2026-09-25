@@ -14,62 +14,38 @@ Key Differences:
 
 import numpy as np
 
-def demonstrate_copy():
-    print("--- 1. THE COPY ---")
-    
-    # Initialize the original array
-    original_array = np.array([23, 43, 45, 76, 67])
-    print(f"Initial Original Array: {original_array}")
-
-    # Create a true copy using the .copy() method
-    copied_array = original_array.copy()
-    
-    # Modify the copied array
-    copied_array[2] = 354
-    print("\nAction: Changed index 2 of the COPIED array to 354.")
-
-    # Output the results
-    print(f"Original Array now:     {original_array}")
-    print(f"Copied Array now:       {copied_array}")
-    print("Takeaway: The original array remains untouched because the copy owns its own data.\n")
+def before():
+    print("\n" + "-" * 10 + " BEFORE MODIFICATION " + "-" * 10)
 
 
-def demonstrate_view():
-    print("--- 2. THE VIEW (Slicing) ---")
-    
-    # Initialize a new original array
-    source_array = np.array([23, 43, 45, 65, 98, 68])
-    print(f"Initial Source Array:   {source_array}")
+def after():
+    print("\n" + "-" * 10 + " AFTER MODIFICATION " + "-" * 10)
 
-    # Slicing in NumPy creates a VIEW, not a new array
-    view_array = source_array[1:4]
-    print(f"Initial View Array:     {view_array} (Sliced from index 1 to 3)")
+# Initialize original arrays
+a = np.array([23, 43, 65, 87, 45])
+b = np.array([54, 36, 87, 34, 97, 11])
 
-    # Modify the view
-    view_array[1] = 1000
-    print("\nAction: Changed index 1 of the VIEW array to 1000.")
+before()
+print(f"Original a: {a}")
+print(f"Original b: {b}")
 
-    # Output the results
-    print(f"Source Array now:       {source_array}")
-    print(f"View Array now:         {view_array}")
-    print("Takeaway: The source array WAS MUTATED because the view shares the exact same memory.\n")
+# 1. DEEP COPY: Independent clone
+# Changing 'c' will NOT affect 'a'
+c = a.copy()
+c[3] = 234
 
+# 2. VIEW / REFERENCE: Shared memory
+# Changing 'd' WILL directly change 'a'
+d = a
+d[3] = 999
 
-def check_ownership():
-    print("--- 3. VERIFYING OWNERSHIP (.base attribute) ---")
-    # You can check if an array owns its data by looking at the `.base` attribute.
-    # If it returns None, the array owns the data (it's a copy/original). 
-    # If it returns an array, it does not own the data (it's a view).
-    
-    arr = np.array([1, 2, 3, 4, 5])
-    my_copy = arr.copy()
-    my_view = arr[1:3]
-    
-    print(f"my_copy.base returns: {my_copy.base} -> (Owns its data)")
-    print(f"my_view.base returns: {my_view.base} -> (Does NOT own its data, points to original)")
+after()
+print(f"a (Changed! d modified this): {a}")
+print(f"b (Unchanged)               : {b}")
+print(f"c (Isolated Deep Copy)      : {c}")
+print(f"d (Reference to a)          : {d}")
 
-
-if __name__ == "__main__":
-    demonstrate_copy()
-    demonstrate_view()
-    check_ownership()
+# Quick confirmation test
+print("\n" + "-" * 10 + " MEMORY CHECK " + "-" * 10)
+print(f"Do 'a' and 'd' share memory? {np.shares_memory(a, d)}")
+print(f"Do 'a' and 'c' share memory? {np.shares_memory(a, c)}")
